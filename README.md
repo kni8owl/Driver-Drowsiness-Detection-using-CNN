@@ -5,22 +5,15 @@
 pip install -r requirements.txt
 ```
 
-## How to start demo 
-```{r, engine='bash', count_lines}
-python drowsiness detection.py
-```
-
-![Demo](Demo.gif)
-
 ## Dataset  
 This dataset is just one part of The MRL Eye Dataset, the large-scale dataset of human eye images. It is prepared for classification tasks This dataset contains infrared images in low and high resolution, all captured in various lighting conditions and by different devices. The dataset is suitable for testing several features or trainable classifiers. In order to simplify the comparison of algorithms, the images are divided into several categories, which also makes them suitable for training and testing classifiers.
 
 The full dataset is available here : http://mrl.cs.vsb.cz/eyedataset
 
-Our dataset includes **24K** images for both closed and open eye categories.
+Our dataset includes **10K** images for both closed and open eye categories.
 
-- Training images : 38400
-- Validation images : 9600
+- Training images : 16000
+- Validation images : 4000
 
 - Orginal size (86,86,3)
 - Resized (32,32,3) -> smaller image size means less training time !
@@ -37,14 +30,13 @@ python train_cnn.py
 
 ## Training
 
-![Curves](lr_curves.png)
 
 - ResNet50 Transfer learning ( Baseline ) : 87.68%
 - ResNet50 Transfer learning + Regularization : 87.78%
 - ResNet50 Fine Tuning : 90.62%
 - Our Custom ConvNEt : 94.7%
 
-Although fine-tuned ResNet50 improved validation accuracy on our dataset, our custom ConvNet still stands as the best performance model.
+Although fine-tuned ResNet50 improved validation accuracy on our dataset, our custom CNN model still stands as the best performance model.
 
 
 ## ResNet50 Transfer learning
